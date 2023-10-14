@@ -10,12 +10,15 @@ public class FuncionarioPrototype extends Usuario {
 
     public FuncionarioPrototype(Usuario usuario, FuncionarioPrototype funcionario){
         super(usuario.getNome(), usuario.getEmail(), usuario.getSenha());
-
+        this.codFuncionario = funcionario.getCodFuncionario();
+        this.cargaHoraria = funcionario.getCargaHoraria();
+        this.setorFuncionario = funcionario.getSetorFuncionario();
+        
+    }
+    public  FuncionarioPrototype(){
         setCodFuncionario(4515);
         setSetorFuncionario("M");
         setCargaHoraria(8);
-    }
-    public  FuncionarioPrototype(){
 
     }
 

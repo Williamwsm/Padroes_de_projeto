@@ -3,19 +3,21 @@ package Padroes.AtvPrototype.UsuarioPrototype;
 import Padroes.AtvPrototype.Usuario.Usuario;
 
 public class AdministradorPrototype extends Usuario {
-    private Usuario usuario = new Usuario();
     private int codAdm;
     private String equipeAdm;
     private  String setorAdm;
 
     public AdministradorPrototype(Usuario usuario,AdministradorPrototype adm) {
         super(usuario.getNome(), usuario.getEmail(), usuario.getSenha());
+        this.codAdm = adm.getCodAdm();
+        this.equipeAdm = adm.getEquipeAdm();
+        this.setorAdm = adm.getSetorAdm();
+        
+    }
+    public AdministradorPrototype(){
         setCodAdm(451);
        setEquipeAdm("A");
        setSetorAdm("loja");
-    }
-    public AdministradorPrototype(){
-
     }
 
     public int getCodAdm() {

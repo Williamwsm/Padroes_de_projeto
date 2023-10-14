@@ -10,9 +10,12 @@ public class ClientePrototype extends Usuario {
     public ClientePrototype(Usuario usuario ,ClientePrototype cliente) {
 
         super(usuario.getNome(), usuario.getEmail(), usuario.getSenha());
-        setEndereco("Rua: Campo novo");    }
+        this.endereco = cliente.getEndereco();
+        this.valorCompra = cliente.getValorCompra();
+      }
 
     public ClientePrototype(){
+        setEndereco("Rua: Campo novo");  
 
     }
 
