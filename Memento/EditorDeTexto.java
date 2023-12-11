@@ -13,12 +13,12 @@ public class EditorDeTexto {
     }
     public  void digitar(String texto){
         this.conteudo += " "+ texto;
+
     }
-    public Memento salvarEstado(){  // salva o conteudo em seu estado atual em um objeto memento
+    public Memento salvarEstado(){
         return  new Memento(conteudo);
     }
-    public  void restaurarEstado(Memento dadosSalvos){ // restaura o conteudo para a ultima versao
-        // q foi salva dele no memento
+    public  void restaurarEstado(Memento dadosSalvos){
         this.conteudo = dadosSalvos.getEstadoSalvo();
     }
 }

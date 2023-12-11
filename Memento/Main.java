@@ -4,14 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         EditorDeTexto editor = new EditorDeTexto();
-        editor.digitar("promocoes de fim de ano");
-        editor.digitar("para atualizar o setup:");
+        Caretaker caretaker = new Caretaker();
 
-        Memento momento1 = editor.salvarEstado();
-        System.out.println("Conteúdo atual:" + editor.getConteudo());
-        editor.digitar("aniversario da Terabyte");
-        System.out.println("Conteúdo atual:" + editor.getConteudo());
-        editor.restaurarEstado(momento1);
-        System.out.println("Conteúdo após desfazer:" + editor.getConteudo());
-        }
+        editor.digitar("Lista de compras de fim de ano:");
+        caretaker.adicionarEstado(editor.salvarEstado());
+        editor.digitar("Monitor, teclado");
+        caretaker.adicionarEstado(editor.salvarEstado());
+        System.out.println("Conteúdo atual: " + editor.getConteudo());
+
+        editor.restaurarEstado(caretaker.getEstados(0));
+        System.out.println("Conteúdo após restaurar: " + editor.getConteudo());
+    }
 }

@@ -8,7 +8,7 @@ public class Memento {
         return estadoSalvo;
     }
 
-    public Memento(String estadoSalvo) { // armazena o conteudo q  estar sendo salvado
+    public Memento(String estadoSalvo) {
         this.estadoSalvo = estadoSalvo;
     }
 }
